@@ -24,27 +24,34 @@ extension Reminder
             title: "Get my glasses"
             , dueDate: Date().addingTimeInterval(
                 800.0 )
-            , notes: "You have to pay for the service R$45.00" )
+            , notes: "You have to pay for the service R$45.00"
+            , isComplete: true
+        )
         , Reminder(
             title: "Transfer the light bill"
             , dueDate: Date().addingTimeInterval(
                 14000.0 )
-            , notes: "try doing from the website" )
+            , notes: "try doing from the website"
+        )
         , Reminder(
             title: "Practice clean code"
             , dueDate: Date().addingTimeInterval(
                 6000000.0 )
-            , notes: "project claculator IMC" )
+            , notes: "project claculator IMC"
+        )
         , Reminder(
             title: "go to the clinic"
             , dueDate: Date().addingTimeInterval(
                 19000.0 )
-            , notes: "make sure you have your documents" )
+            , notes: "make sure you have your documents"
+        )
         , Reminder(
             title: "Game Presentation"
             , dueDate: Date().addingTimeInterval(
                 200000.0 ),
-            notes: "get your shit together" )
+            notes: "get your shit together"
+            , isComplete: true
+        )
     ]
 }
 #endif

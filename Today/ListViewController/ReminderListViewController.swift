@@ -9,9 +9,6 @@ import UIKit
 
 class ReminderListViewController: UICollectionViewController
 {
-    typealias DataSource = UICollectionViewDiffableDataSource< Int, String >
-    typealias Snapshot = NSDiffableDataSourceSnapshot< Int, String >
-    
     var dataSource: DataSource!
 
     override func viewDidLoad()
@@ -21,17 +18,7 @@ class ReminderListViewController: UICollectionViewController
         let listLayout = listLayout()
         collectionView.collectionViewLayout = listLayout
         
-        let cellRegistration = UICollectionView.CellRegistration // specifies how to configure the content and the appearence of the cell
-        { ( cell: UICollectionViewListCell
-            , indexPath: IndexPath
-            , itemIdentifier: String ) in
-            
-            let reminder = Reminder.sampleData[ indexPath.item ]
-            
-            var contentConfiguration = cell.defaultContentConfiguration() // creates a content configuration with the predefined system style
-            contentConfiguration.text = reminder.title // the list displays the configuration text as the primary text of a cell
-            cell.contentConfiguration = contentConfiguration
-        }
+        let cellRegistration = UICollectionView.CellRegistration( handler: cellRegistrationHandler ) // function as the handler parameter
         
         dataSource = DataSource(
             collectionView: collectionView )

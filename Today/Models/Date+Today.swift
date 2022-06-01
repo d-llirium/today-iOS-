@@ -9,7 +9,7 @@ import Foundation
 
 extension Date
 {
-    var dayAndTime: String
+    var dayAndTimeText: String
     {
         let timeText = formatted(
             date: .omitted

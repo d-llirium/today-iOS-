@@ -9,7 +9,6 @@ import UIKit
 
 extension ReminderListViewController
 {
-    
     typealias DataSource = UICollectionViewDiffableDataSource< Int, String >
     typealias Snapshot = NSDiffableDataSourceSnapshot< Int, String >
     
@@ -44,8 +43,8 @@ extension ReminderListViewController
     private func doneButtonConfiguration(
         for reminder: Reminder
     ) -> UICellAccessory.CustomViewConfiguration {
-        let symbolName = reminder.isComplete ? "circle.fill" : "circle"
-        let symbolConfiguration = UIImage.SymbolConfiguration( textStyle: .title1 ) // Although symbols are images, they support many traits, such as font style, that you associate with text
+        let symbolName = reminder.isComplete ? "clock.badge.checkmark.fill" : "clock.badge.exclamationmark"
+        let symbolConfiguration = UIImage.SymbolConfiguration.preferringMulticolor() // Although symbols are images, they support many traits, such as font style, that you associate with text
         let image = UIImage(
             systemName: symbolName
             , withConfiguration: symbolConfiguration
